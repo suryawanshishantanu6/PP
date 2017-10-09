@@ -1,0 +1,33 @@
+mysql> create database p;
+Query OK, 1 row affected (0.02 sec)
+
+mysql> use p
+Database changed
+mysql> create table login(username varchar(30),password varchar(30));
+Query OK, 0 rows affected (0.99 sec)
+
+mysql> create table emp(name varchar(40),type varchar(10),netlitres int,rate int,price int);
+Query OK, 0 rows affected (0.45 sec)
+
+mysql> insert into login values("Admin","Admin123");
+Query OK, 1 row affected (0.18 sec)
+
+mysql> insert into login values("Emp","Emp123");
+Query OK, 1 row affected (0.09 sec)
+
+mysql> create table nozzle1(capacity int,remaining int);
+Query OK, 0 rows affected (0.43 sec)
+
+mysql> create table nozzle2(capacity int,remaining int);
+Query OK, 0 rows affected (0.39 sec)
+
+mysql> create table nozzle3(capacity int,remaining int);
+Query OK, 0 rows affected (0.56 sec)
+
+mysql> create table admin(allcapacity int,outlet int,remaining int);
+Query OK, 0 rows affected (0.45 sec)
+
+mysql> create table supplier(allcapacity int,inlet int,remaining int);
+Query OK, 0 rows affected (0.64 sec)
+
+mysql>

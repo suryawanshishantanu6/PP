@@ -17,6 +17,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import javax.swing.JTextField;
+import com.mysql.*;
+import java.sql.*;
 
 public class Admin extends JFrame {
 
@@ -48,6 +50,10 @@ public class Admin extends JFrame {
 	 * Create the frame.
 	 */
 	public Admin() {
+		
+		//public int rem=0;
+		//public int in=0;
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -65,7 +71,151 @@ public class Admin extends JFrame {
 		JComboBox comboBox = new JComboBox(nozzles);
 		comboBox.setBounds(10, 110, 72, 26);
 		contentPane.add(comboBox);
-		//comboBox.addActionListener(this);
+		comboBox.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				String s = (String) comboBox.getSelectedItem();
+				switch (s) {
+				case "Nozzle 1":
+					textField.setText("30");
+					try{
+						String x=textField_1.getText();
+						
+						
+						Class.forName("com.mysql.jdbc.Driver");
+						Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/p?useSSL=false","root","shan123");
+						Statement stmt = con.createStatement();
+						
+						//String sql = ("INSERT INTO emp (name,type,netlitres,rate,price) VALUES ('"+x+"','"+y+"','"+z+"','"+z2+"','"+z1+"')");
+						String sql = ("SELECT remaining,inlet from nozzle1");
+						ResultSet rs = stmt.executeQuery(sql);
+						//int rem,in;
+						while (rs.next()){
+							int rem = (rs.getInt("remaining"));
+							int in = (rs.getInt("inlet"));
+							String haha=Integer.toString(rem);
+							String haha1=Integer.toString(in);
+							textField_1.setText(haha);
+							textField_2.setText(haha1);
+						}
+					
+					
+						rs.close();
+						con.close();
+					}catch(Exception e1){
+						System.out.println(e1);
+					}
+					
+					break;
+					
+				case "Nozzle 2":
+					textField.setText("40");
+					try{
+						String x=textField_1.getText();
+						
+						
+						Class.forName("com.mysql.jdbc.Driver");
+						Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/p?useSSL=false","root","shan123");
+						Statement stmt = con.createStatement();
+						
+						//String sql = ("INSERT INTO emp (name,type,netlitres,rate,price) VALUES ('"+x+"','"+y+"','"+z+"','"+z2+"','"+z1+"')");
+						String sql = ("SELECT remaining,inlet from nozzle2");
+						ResultSet rs = stmt.executeQuery(sql);
+						//int rem,in;
+						while (rs.next()){
+							int rem = (rs.getInt("remaining"));
+							int in = (rs.getInt("inlet"));
+							String haha=Integer.toString(rem);
+							String haha1=Integer.toString(in);
+							textField_1.setText(haha);
+							textField_2.setText(haha1);
+						}
+					
+					
+						rs.close();
+						con.close();
+					}catch(Exception e1){
+						System.out.println(e1);
+					}
+					
+
+					break;
+
+				case "Nozzle 3":
+					textField.setText("50");
+					try{
+						String x=textField_1.getText();
+						
+						
+						Class.forName("com.mysql.jdbc.Driver");
+						Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/p?useSSL=false","root","shan123");
+						Statement stmt = con.createStatement();
+						
+						//String sql = ("INSERT INTO emp (name,type,netlitres,rate,price) VALUES ('"+x+"','"+y+"','"+z+"','"+z2+"','"+z1+"')");
+						String sql = ("SELECT remaining,inlet from nozzle3");
+						ResultSet rs = stmt.executeQuery(sql);
+						//int rem,in;
+						while (rs.next()){
+							int rem = (rs.getInt("remaining"));
+							int in = (rs.getInt("inlet"));
+							String haha=Integer.toString(rem);
+							String haha1=Integer.toString(in);
+							textField_1.setText(haha);
+							textField_2.setText(haha1);
+						}
+					
+					
+						rs.close();
+						con.close();
+					}catch(Exception e1){
+						System.out.println(e1);
+					}
+					
+
+					break;
+
+				case "Nozzle 4":
+					textField.setText("60");
+					try{
+						String x=textField_1.getText();
+						
+						
+						Class.forName("com.mysql.jdbc.Driver");
+						Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/p?useSSL=false","root","shan123");
+						Statement stmt = con.createStatement();
+						
+						//String sql = ("INSERT INTO emp (name,type,netlitres,rate,price) VALUES ('"+x+"','"+y+"','"+z+"','"+z2+"','"+z1+"')");
+						String sql = ("SELECT remaining,inlet from nozzle4");
+						ResultSet rs = stmt.executeQuery(sql);
+						//int rem,in;
+						while (rs.next()){
+							int rem = (rs.getInt("remaining"));
+							int in = (rs.getInt("inlet"));
+							String haha=Integer.toString(rem);
+							String haha1=Integer.toString(in);
+							textField_1.setText(haha);
+							textField_2.setText(haha1);
+						}
+					
+					
+						rs.close();
+						con.close();
+					}catch(Exception e1){
+						System.out.println(e1);
+					}
+					
+
+					break;
+
+
+				default:
+					break;
+				}
+				
+			}
+		});
 		
 		/*public void actionPerformed(ActionEvent e) {
 			JComboBox comboBox = (JComboBox)e.getSource()

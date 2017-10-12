@@ -144,7 +144,7 @@ public class Emp extends JFrame {
 		btnNewButton.setBounds(98, 157, 89, 23);
 		contentPane.add(btnNewButton);
 		
-		JButton btnPrint = new JButton("Print");
+		JButton btnPrint = new JButton("Calculate");
 		btnPrint.setBounds(213, 157, 89, 23);
 		contentPane.add(btnPrint);
 		btnPrint.addActionListener(new ActionListener() {
@@ -155,6 +155,16 @@ public class Emp extends JFrame {
 				String z2=textField_4.getText();
 				//String fin=((z2)*60);
 				//String fz=textField_3.setText(fin);
+				String aa=textField_2.getText();
+				String bb=textField_4.getText();
+				int abc=Integer.parseInt(aa);
+				int abc1=Integer.parseInt(bb);
+				int abc2=(abc*abc1);
+				String abc3=Integer.toString(abc2);
+				textField_3.setText(abc3);
+				
+				
+				
 				
 			}
 		});
